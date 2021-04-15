@@ -1,0 +1,117 @@
+﻿<!-- header
+   ================================================== -->
+<header class="short-header">
+
+    <div class="gradient-block"></div>
+
+    <div class="row header-content">
+
+        <div class="logo">
+            <a href="index.html">Author</a>
+        </div>
+
+        <nav id="main-nav-wrap">
+            <ul class="main-navigation sf-menu">
+                <li class="current"><a asp-area="" asp-controller="Home" asp-action="Index" title="">Главная</a></li>
+
+                <li class="has-children">
+                    <a href="afisha.cshtml" title="">Афиша</a>
+                    <ul class="sub-menu">
+                        <li><a asp-area="" asp-controller="Home", asp-action="Index">Спектакли</a></li>
+                        <li><a href="afisha.html">Выставки</a></li>
+                        <li><a href="category.html">Встречи</a></li>
+                        <li><a href="category.html">Театр</a></li>
+                        <li><a href="category.html">Концерты</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-children">
+                    <a href="category.html" title="">Кино</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">О кино</a></li>
+                        <li><a href="category.html">Статьи о кино</a></li>
+                        <li><a href="category.html">Биография актеров и режиссеров</a></li>
+                        <li><a href="category.html">Что посмотреть?</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="has-children">
+                    <a href="category.html" title="">Традиции и быт</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Все о традициях</a></li>
+                        <li><a href="category.html">Статьи о традициях</a></li>
+                        <li><a href="category.html">Нематериальное культурное наследие</a></li>
+                        <li><a href="category.html">Ритуалы и обычаи</a></li>
+                        <li><a href="category.html">Религиозное наследие</a></li>
+                        <li><a href="category.html">Одежда</a></li>
+                        <li><a href="category.html">Кухня</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-children">
+                    <a href="category.html" title="">Архитектура</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Статьи об архитектуре</a></li>
+                        <li><a href="category.html">Каталог</a></li>
+                        <li><a href="category.html">Памятники архитектуры</a></li>
+                        <li><a href="category.html">Биографии архитекторов</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-children">
+                    <a href="category.html" title="">Театр</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Статьи о театрах</a></li>
+                        <li><a href="category.html">Биографии актеров и постановщиков</a></li>
+                        <li><a href="category.html">Каталог театров</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="has-children">
+                    <a href="category.html" title="">Литература</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Все о литературе</a></li>
+                        <li><a href="category.html">Статьи о кыргызской литературе</a></li>
+                        <li><a href="category.html">Что почитать?</a></li>
+                        <li><a href="category.html">Библиотеки Кыргызстана</a></li>
+                        <li><a href="category.html">Эпос "Манас"</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="has-children">
+                    <a href="category.html" title="">Музеи</a>
+                    <ul class="sub-menu">
+                        <li><a href="category.html">Музеи и коллекции</a></li>
+                        <li><a href="category.html">Каталог</a></li>
+                        <li><a href="category.html">Художники и коллекционеры</a></li>
+                    </ul>
+                </li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contacts" title="">Контакты</a></li>
+            </ul>
+        </nav> <!-- end main-nav-wrap -->
+
+        <div class="search-wrap">
+
+            <form role="search" method="get" class="search-form" action="#">
+                <label>
+                    <span class="hide-content">Search for:</span>
+                    <input type="search" class="search-field" placeholder="Type Your Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                </label>
+                <input type="submit" class="search-submit" value="Search">
+            </form>
+
+            <a href="#" id="close-search" class="close-btn">Close</a>
+
+        </div> <!-- end search wrap -->
+
+        <div class="triggers">
+            <a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
+            <a class="menu-toggle" href="#"><span>Menu</span></a>
+        </div> <!-- end triggers -->
+
+    </div>
+
+</header> <!-- end header -->

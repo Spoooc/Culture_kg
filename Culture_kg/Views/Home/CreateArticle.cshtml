@@ -1,0 +1,73 @@
+﻿<!--model Article
+
+{
+    ViewData["Title"] = "Создание статьи";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Создать статью</h1>
+
+<h4>Статья</h4>
+<hr />
+<div class="row">
+    <script src="/lib/ckeditor5/ckeditor.js"></script>
+    <div class="col-md-4">
+        using (Html.BeginForm("CreateArticle", "Home", FormMethod.Post))
+        {
+            <div>
+                <textarea id="Article" name="Article"></textarea>
+
+            </div>
+            <div>
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+        ClassicEditor.Create(document.querySelector('Article'));
+    });
+</script>
+
+
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>-->
+
+@*@section Scripts {
+    <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+    <script>
+
+        CKEDITOR.replace('Article', {
+            customConfig: '/lib/ckeditor5/ckeditor.js'
+        });
+
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+        </head>
+        <body>
+                <div id="editor">This is some sample content.</div>
+                <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
+        </body>
+</html>

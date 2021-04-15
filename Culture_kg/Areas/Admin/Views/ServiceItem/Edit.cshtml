@@ -1,0 +1,138 @@
+﻿@model ServiceItem
+@{
+    string strTitle = "Редактировать статью";
+    ViewBag.Title = strTitle;
+}
+
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+<script src="~/js/package/dist/editor.js"></script>
+
+<div>
+    <h2>@strTitle</h2>
+
+    <div class="primary-content">
+
+        <form asp-area="Admin" asp-controller="ServiceItem" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="DateAdded" />
+            <input type="hidden" asp-for="TitleImagePath" />
+
+            <div asp-validation-summary="All"></div>
+            <div class="div-box">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" />
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Subtitle"></label>
+                <input asp-for="Subtitle" />
+                <span asp-validation-for="Subtitle"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Text"></label>
+                <textarea asp-for="Text"></textarea>
+                <span asp-validation-for="Text"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="TitleImagePath"></label>
+                <input type="file" name="titleImageFile" id="titleImageFile" />
+                <div>
+                    <img class="img-block" src="~/images/@Model.TitleImagePath" />
+                </div>
+            </div>
+            <div class="div-box">
+                <label asp-for="MetaTitle"></label>
+                <input asp-for="MetaTitle" />
+                <span asp-validation-for="MetaTitle"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="MetaDescription"></label>
+                <input asp-for="MetaDescription" />
+                <span asp-validation-for="MetaDescription"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="ArticleCategory"></label>
+                <select name="ArticleCategory">
+                    <optgroup label="Афиша">
+                        <option value="Спектакли">Спектакли</option>
+                        <option value="Выставки">Выставки</option>
+                        <option value="Встречи">Встречи</option>
+                        <option value="Театр">Театр</option>
+                        <option value="Концерты">Концерты</option>
+
+                    </optgroup>
+
+                    <optgroup label="Кино">
+                        <option value="О кино">О кино</option>
+                        <option value="Биография актеров и режиссеров">Биография актеров и режиссеров</option>
+                        <option value="Что посмотреть?">Что посмотреть?</option>
+                    </optgroup>
+
+                    <optgroup label="Традиции и быт">
+                        <option value="Нематериальное культурное наследие">Нематериальное культурное наследие</option>
+                        <option value="Ритуалы и обычаи">Ритуалы и обычаи</option>
+                        <option value="Религиозное наследие">Религиозное наследие</option>
+                        <option value="Одежда">Одежда</option>
+                        <option value="Кухня">Кухня</option>
+                    </optgroup>
+
+                    <optgroup label="Архитектура">
+                        <option value="Статьи об архитектуре">Статьи об архитектуре</option>
+                        <option value="Каталог">Каталог</option>
+                        <option value="Памятники архитектуры">Памятники архитектуры</option>
+                        <option value="Биографии архитекторов">Биографии архитекторов</option>
+                    </optgroup>
+
+                    <optgroup label="Театр">
+                        <option value="Биографии актеров и постановщиков">Биографии актеров и постановщиков</option>
+                        <option value="Каталог театров">Каталог театров</option>
+                    </optgroup>
+
+                    <optgroup label="Литература">
+                        <option value="Статьи о кыргызской литературе">Статьи о кыргызской литературе</option>
+                        <option value="Библиотеки Кыргызстана">Библиотеки Кыргызстана</option>
+                        <option value="Эпос Манас">Эпос Манас</option>
+                    </optgroup>
+
+                    <optgroup label="Музеи">
+                        <option value="Музеи и коллекции">Музеи и коллекции</option>
+                        <option value="Каталог">Каталог</option>
+                        <option value="Художники и коллекционеры">Художники и коллекционеры</option>
+                    </optgroup>
+                </select>
+
+                <span asp-validation-for="ArticleCategory"></span>
+            </div>
+
+
+
+            <input type="submit" value="Сохранить" />
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    window.onload = function() {
+        var newCKEdit = CKEDITOR.replace('@Html.IdFor(x=>x.Text)');
+        newCKEdit.updateElement();
+    }
+
+    @*ClassicEditor
+        .create(document.querySelector('@Html.IdFor(x=>x.Text)')
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });*@
+
+</script>

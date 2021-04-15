@@ -1,0 +1,102 @@
+﻿@model IQueryable<ServiceItem>
+
+
+<section id="bricks">
+
+    <div class="row masonry">
+
+        <!-- brick-wrapper -->
+        <div class="bricks-wrapper">
+
+            <div class="grid-sizer"></div>
+
+            @if (Model.Any())
+            {
+                @foreach (ServiceItem entity in Model)
+                {
+                    string category = "Спектакли";
+
+                    @if (entity.ArticleCategory == category)
+                    {<!--Article-->
+                        <article class="brick entry format-standard animate-this">
+
+                            <div class="entry-thumb">
+                                <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="thumb-link">
+                                    <img src="~/images/@entity.TitleImagePath" alt="">
+                                </a>
+                            </div>
+
+                            <div class="entry-text">
+                                <div class="entry-header">
+
+                                    <div class="entry-meta">
+                                        <span class="cat-links">
+                                            <a href="#">@entity.ArticleCategory</a>
+                                            <a href="#">Photography</a>
+                                        </span>
+                                    </div>
+
+                                    <h1 class="entry-title"><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">@entity.MetaDescription</a></h1>
+
+                                </div>
+                                <div class="entry-excerpt">
+                                    @entity.Title
+                                </div>
+                            </div>
+                            <!--end article-->
+                        </article>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+@*@model IEnumerable<Article>*@
+@*{
+        //ViewData["Title"] = "Список статей";
+        @*Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+    @*<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <title>Культурно-просветительский портал</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="jumbotron text-center">
+            <h1>Опубликованые статьи</h1>
+            <p>Данные статьи не является авторскими я просто их скопировал с интернета или сам придумал</p>
+        </div>*@
+
+@*@foreach (var article in Model)
+    {
+       <div class="container">
+        <div class="card" style="width:400px">
+        <img class="card-img-top" src="https://www.kino-teatr.ru/movie/posters/big/9/102299.jpg" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@article.shortDesc</h4>
+            <a href ="~/Home/GetArticle/@article.ArticleID" class="btn btn-primary">Читать</a>
+        </div>
+            </div>
+           </div>
+
+    }*@
+
+
+@*</body>
+    </html>*@
+
